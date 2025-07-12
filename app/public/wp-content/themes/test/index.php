@@ -153,6 +153,13 @@
                         </div>
                     </div>
 
+                    <!-- 赤いテキストボックス -->
+                    <div class="hero-red-box">
+                        <div class="red-text-small">※写真はイメージです</div>
+                        <div class="red-text-large">京阪介護グループ採用サイトへようこそ！動きながら自然で切り替わる想定です</div>
+                        <div class="red-text-medium">クリック等で切り替わり可能です</div>
+                    </div>
+
                     <!-- メインキャッチコピー -->
                     <div class="hero-main-copy">
                         <span class="k-logo-black">K</span>
