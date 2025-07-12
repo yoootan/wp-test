@@ -1,0 +1,631 @@
+/*
+Theme Name: Test Theme
+Description: 京阪介護グループ採用サイト
+Author: Your Name
+Version: 1.0
+*/
+
+/* リセットとベーススタイル */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans JP", "游ゴシック", "Yu Gothic", YuGothic, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+/* 固定ヘッダー */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 15px 30px;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ヘッダーロゴ */
+.header-logo {
+  background-color: white;
+  padding: 8px 15px;
+  border-radius: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-logo a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #333;
+}
+
+.logo-k {
+  width: 30px;
+  height: 30px;
+  background-color: #000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 50%;
+}
+
+.logo-text {
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+.logo-subtitle {
+  font-size: 9px;
+  font-weight: 400;
+  margin-left: 6px;
+}
+
+/* ヘッダー右側 */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* ENTRYボタン */
+.header-entry-btn {
+  background-color: #3b82c4;
+  color: white;
+  padding: 10px 30px;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: Arial, sans-serif;
+}
+
+.header-entry-btn:hover {
+  background-color: #2563eb;
+}
+
+/* ハンバーガーメニューボタン */
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger-menu span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+
+/* スクロール時のヘッダー背景 */
+.fixed-header.scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ハンバーガーメニューオーバーレイ */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 90%;
+  max-width: 1200px;
+  height: 100%;
+  background-color: white;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.menu-overlay.active .menu-container {
+  transform: translateX(0);
+}
+
+/* メニュー閉じるボタン */
+.menu-close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+  z-index: 10;
+}
+
+/* メニューヘッダー */
+.menu-header {
+  text-align: center;
+  padding: 80px 60px 60px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.menu-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.menu-k {
+  width: 60px;
+  height: 60px;
+  background-color: #000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 32px;
+  border-radius: 50%;
+}
+
+.menu-logo-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.menu-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.corp-site-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #666;
+  text-decoration: none;
+  padding: 12px 30px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background-color: #f8f8f8;
+}
+
+.corp-site-link:hover {
+  background-color: #f0f0f0;
+  border-color: #999;
+}
+
+/* メニューコンテンツ */
+.menu-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  padding: 60px;
+}
+
+.menu-column {
+  padding: 0 30px;
+  border-right: 1px solid #e5e5e5;
+}
+
+.menu-column:last-child {
+  border-right: none;
+}
+
+.menu-section-title {
+  margin-bottom: 30px;
+}
+
+.title-en {
+  display: block;
+  font-size: 11px;
+  color: #999;
+  letter-spacing: 0.2em;
+  margin-bottom: 5px;
+}
+
+.title-jp {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.menu-subtitle {
+  margin-bottom: 20px;
+}
+
+.subtitle-en {
+  display: block;
+  font-size: 11px;
+  color: #999;
+  letter-spacing: 0.1em;
+  margin-bottom: 5px;
+}
+
+.subtitle-jp {
+  display: block;
+  font-size: 16px;
+  color: #333;
+}
+
+.menu-subtitle-orange {
+  font-size: 16px;
+  color: #d4a574;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.menu-list {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.menu-list li {
+  padding: 12px 0;
+  color: #666;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.menu-list li:last-child {
+  border-bottom: none;
+}
+
+.menu-subsection {
+  margin-bottom: 35px;
+}
+
+.menu-subsection:last-child {
+  margin-bottom: 0;
+}
+
+/* メニューボタン */
+.menu-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 60px 60px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.btn-contact,
+.btn-entry-form {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 60px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-contact {
+  background-color: #1f2937;
+  color: white;
+}
+
+.btn-entry-form {
+  background-color: #3b82c4;
+  color: white;
+}
+
+.btn-contact:hover,
+.btn-entry-form:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ヒーローセクション */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ヒーローコンテナ */
+.hero-container {
+  display: flex;
+  height: 100%;
+}
+
+/* 左側：スライドショー部分 */
+.hero-left {
+  position: relative;
+  width: 65%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* スライドショー */
+.hero-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* SAMPLEスタンプ */
+.sample-stamp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-25deg);
+  font-size: 160px;
+  font-weight: 900;
+  color: rgba(255, 0, 0, 0.6);
+  letter-spacing: 0.1em;
+  border: 12px solid rgba(255, 0, 0, 0.6);
+  padding: 15px 50px;
+  z-index: 20;
+  pointer-events: none;
+  font-family: Arial, sans-serif;
+}
+
+/* 赤いテキストボックス */
+.hero-red-box {
+  position: absolute;
+  top: 130px;
+  left: 35px;
+  background-color: #dc2626;
+  color: white;
+  padding: 18px 25px;
+  max-width: 350px;
+  z-index: 10;
+}
+
+.red-text-small {
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.red-text-large {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 4px;
+}
+
+.red-text-medium {
+  font-size: 11px;
+  margin-bottom: 2px;
+}
+
+/* メインキャッチコピー */
+.hero-main-copy {
+  position: absolute;
+  bottom: 100px;
+  left: 35px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 10;
+}
+
+.k-logo-black {
+  width: 45px;
+  height: 45px;
+  background-color: #000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 26px;
+  border-radius: 50%;
+}
+
+.hero-main-copy h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.02em;
+}
+
+/* 左側の縦書き番号 */
+.hero-side-number {
+  position: absolute;
+  left: 8px;
+  bottom: 180px;
+  transform: rotate(-90deg);
+  transform-origin: left bottom;
+  z-index: 10;
+}
+
+.hero-side-number span {
+  font-size: 8px;
+  color: #999;
+  letter-spacing: 0.05em;
+}
+
+/* 右側：Re:CARE部分 */
+.hero-right {
+  position: relative;
+  width: 35%;
+  height: 100%;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Re:CARE セクション */
+.hero-recare {
+  text-align: center;
+  padding: 0 40px;
+}
+
+.recare-title {
+  font-family: "Playfair Display", serif;
+  font-size: 130px;
+  font-weight: 400;
+  font-style: italic;
+  color: #c9a961;
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.recare-subtitle {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* 右下のロゴ */
+.hero-bottom-logo {
+  position: absolute;
+  bottom: 100px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bottom-k {
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 23px;
+  border-radius: 50%;
+}
+
+.bottom-text {
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+/* ニュースティッカー */
+.news-ticker {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border-top: 1px solid #e5e5e5;
+  z-index: 100;
+}
+
+.news-ticker-inner {
+  padding: 12px 35px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.news-label {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 2px 10px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.news-date {
+  color: #666;
+  font-size: 11px;
+}
+
+.news-text {
+  flex: 1;
+  color: #333;
+  font-size: 12px;
+}
+
+.news-arrow {
+  color: #c9a961;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* アイコン */
+.icon {
+  font-size: 18px;
+}
+
+.arrow {
+  font-size: 14px;
+  margin-left: 5px;
+}

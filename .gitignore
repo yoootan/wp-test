@@ -1,0 +1,62 @@
+# WordPress Core
+/app/public/wp-admin/
+/app/public/wp-includes/
+/app/public/wp-content/uploads/
+/app/public/wp-content/upgrade/
+/app/public/wp-content/backup-db/
+/app/public/wp-content/cache/
+/app/public/wp-content/backups/
+
+# WordPress Config
+/app/public/wp-config.php
+/app/public/wp-config-local.php
+
+# WordPress files
+/app/public/wp-activate.php
+/app/public/wp-blog-header.php
+/app/public/wp-comments-post.php
+/app/public/wp-config-sample.php
+/app/public/wp-cron.php
+/app/public/wp-links-opml.php
+/app/public/wp-load.php
+/app/public/wp-login.php
+/app/public/wp-mail.php
+/app/public/wp-settings.php
+/app/public/wp-signup.php
+/app/public/wp-trackback.php
+/app/public/xmlrpc.php
+/app/public/license.txt
+/app/public/readme.html
+/app/public/index.php
+
+# WordPress plugins (except custom ones)
+/app/public/wp-content/plugins/*
+!/app/public/wp-content/plugins/index.php
+
+# WordPress themes (except our custom theme)
+/app/public/wp-content/themes/*
+!/app/public/wp-content/themes/test/
+
+# Local by Flywheel
+/logs/
+/conf/
+/app/public/local-xdebuginfo.php
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Node
+node_modules/
+npm-debug.log
+
+# Composer
+vendor/
+composer.lock 
