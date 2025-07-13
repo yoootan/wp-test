@@ -180,7 +180,7 @@
             <!-- ニュースティッカー -->
             <div class="news-ticker">
                 <div class="news-ticker-inner">
-                    <span class="news-label">NEWS</span>
+                    <span class="news-label">NEWStest</span>
                     <span class="news-date">2025.01.01</span>
                     <span class="news-text">ニュースタイトルが入ります。タイトル...</span>
                     <a href="#" class="news-arrow">→</a>
