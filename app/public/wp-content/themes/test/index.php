@@ -12,26 +12,7 @@
 </head>
 
 <body <?php body_class('keihan-kaigo-recruitment'); ?>>
-    <!-- 固定ヘッダー -->
-    <header class="fixed-header">
-        <div class="header-inner">
-            <div class="header-logo">
-                <a href="<?php echo home_url(); ?>">
-                    <span class="logo-k">K</span>
-                    <span class="logo-text">KEIHAN KAIGO<br>GROUP</span>
-                    <span class="logo-subtitle">採用サイト</span>
-                </a>
-            </div>
-            <div class="header-right">
-                <button class="header-entry-btn">ENTRY</button>
-                <button class="hamburger-menu" id="hamburgerMenu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </header>
+
 
     <!-- ハンバーガーメニュー -->
     <div class="menu-overlay" id="menuOverlay">
@@ -46,7 +27,7 @@
                         <span>GROUP</span>
                     </div>
                 </div>
-                <h2 class="menu-title">京阪介護グループ採用サイト</h2>
+                <h2 class="menu-title">採用サイト</h2>
                 <a href="#" class="corp-site-link">
                     <span class="icon">🏢</span>
                     京阪介護コーポレートサイト
@@ -135,6 +116,24 @@
 
     <!-- メインコンテンツ -->
     <main class="lp-main">
+        <!-- 固定ヘッダー -->
+        <header class="fixed-header">
+            <div class="header-inner">
+                <div class="header-logo">
+                    <img src="<?php echo get_template_directory_uri(); ?>/sample.jpg" alt="KEIHAN KAIGO GROUP" class="logo-img" />
+                    <p class="logo-title">KEIHAN KAIGO<br />GROUP</p>
+                    <p class="logo-sub">採用サイト</p>
+                </div>
+                <div class="header-right">
+                    <button class="header-entry-btn">ENTRY</button>
+                    <button class="hamburger-menu" id="hamburgerMenu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </header>
         <!-- ヒーローセクション -->
         <section class="hero-section">
             <div class="hero-container">
@@ -153,23 +152,14 @@
                         </div>
                     </div>
 
-                    <!-- 赤いテキストボックス -->
-                    <div class="hero-red-box">
-                        <div class="red-text-small">※写真はイメージです</div>
-                        <div class="red-text-large">京阪介護グループ採用サイトへようこそ！動きながら自然で切り替わる想定です</div>
-                        <div class="red-text-medium">クリック等で切り替わり可能です</div>
-                    </div>
 
-                    <!-- メインキャッチコピー -->
-                    <div class="hero-main-copy">
-                        <span class="k-logo-black">K</span>
-                        <h2>京阪介護で"最高にカッコいい介護"を共に</h2>
-                    </div>
 
-                    <!-- 左側の縦書き番号 -->
-                    <div class="hero-side-number">
-                        <span>#13644770T3</span>
-                    </div>
+                </div>
+
+                <!-- メインキャッチコピー -->
+                <div class="hero-main-copy">
+                    <span class="k-logo-black">K</span>
+                    <h2>京阪介護で"最高にカッコいい介護"を共に</h2>
                 </div>
 
                 <!-- 右側：Re:CARE部分 -->
